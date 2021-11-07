@@ -1,0 +1,77 @@
+/* Website template by freewebsitetemplates.com */
+.footer
+{
+    background-color: #fff;
+}
+.margin-top
+{
+    margin-top: 80px;
+}
+.margin-top70
+{
+    margin-top: 70px;
+}
+.margin-top20 {
+    margin-top: 20px;
+}
+.table-borderless tbody + tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
+    border: 0;
+}
+.group
+{
+    max-height: 300px;
+    overflow: auto;
+}
+.document
+{
+    /*max-height: 600px;*/
+    overflow: auto;
+}
+
+.document1
+{
+    /*max-height: 1000px;*/
+    overflow: auto;
+}
+
+.client_document {
+    max-height: 400px;
+    overflow: auto;
+}
+
+.control {    
+    max-height: 200px;
+    overflow: auto;
+}
+
+.report {       
+    /*max-height: 800px;*/
+    overflow: auto;
+}
+
+.maudo{
+    background-color: #cb003b;
+    color: #ffffff;
+}
+
+.mauxam{
+    background-color: #747373;
+    color: #ffffff;
+}
+.mauxanh{
+    background-color: #3367d6;
+    color: #ffffff;
+}
+.maucam{
+    background-color: #f09d1f;
+    color: #ffffff;
+}
+.mauvang{
+    background-color: #dbac13;
+    color: #ffffff;
+}
+.maureu{
+    background-color:  #16777e;
+    color: #ffffff;
+}
+

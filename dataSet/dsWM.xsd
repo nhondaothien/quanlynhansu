@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsWM" targetNamespace="http://tempuri.org/dsWM.xsd" xmlns:mstns="http://tempuri.org/dsWM.xsd" xmlns="http://tempuri.org/dsWM.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="OEMIS_VNConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OEMIS_VNConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.OEMIS_VNConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwm_TienDoDuAnTableAdapter" GeneratorDataComponentClassName="vwm_TienDoDuAnTableAdapter" Name="vwm_TienDoDuAn" UserDataComponentName="vwm_TienDoDuAnTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OEMIS_VNConnectionString (Web.config)" DbObjectName="oemisdatabase.dbo.vwm_TienDoDuAn" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MaCongTy, TenCongTy, MaKhachHang, TenKhachHang, MaDuAn, TenDuAn, MaHangMuc, TenHangMuc, MaCongViec, NoiDungCongViec, MaNhiemVu, DienGiai, DonViTinh, KeHoachBatDau, KeHoachKetThuc, ThucHienBatDau, ThucHienKetThuc FROM dbo.vwm_TienDoDuAn</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaCongTy" DataSetColumn="MaCongTy" />
+              <Mapping SourceColumn="TenCongTy" DataSetColumn="TenCongTy" />
+              <Mapping SourceColumn="MaKhachHang" DataSetColumn="MaKhachHang" />
+              <Mapping SourceColumn="TenKhachHang" DataSetColumn="TenKhachHang" />
+              <Mapping SourceColumn="MaDuAn" DataSetColumn="MaDuAn" />
+              <Mapping SourceColumn="TenDuAn" DataSetColumn="TenDuAn" />
+              <Mapping SourceColumn="MaHangMuc" DataSetColumn="MaHangMuc" />
+              <Mapping SourceColumn="TenHangMuc" DataSetColumn="TenHangMuc" />
+              <Mapping SourceColumn="MaCongViec" DataSetColumn="MaCongViec" />
+              <Mapping SourceColumn="NoiDungCongViec" DataSetColumn="NoiDungCongViec" />
+              <Mapping SourceColumn="MaNhiemVu" DataSetColumn="MaNhiemVu" />
+              <Mapping SourceColumn="DienGiai" DataSetColumn="DienGiai" />
+              <Mapping SourceColumn="DonViTinh" DataSetColumn="DonViTinh" />
+              <Mapping SourceColumn="KeHoachBatDau" DataSetColumn="KeHoachBatDau" />
+              <Mapping SourceColumn="KeHoachKetThuc" DataSetColumn="KeHoachKetThuc" />
+              <Mapping SourceColumn="ThucHienBatDau" DataSetColumn="ThucHienBatDau" />
+              <Mapping SourceColumn="ThucHienKetThuc" DataSetColumn="ThucHienKetThuc" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="OEMIS_VNConnectionString (Web.config)" DbObjectName="oemisdatabase.dbo.vwm_TienDoDuAn" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByMaCongTy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMaCongTy" GeneratorSourceName="FillByMaCongTy" GetMethodModifier="Public" GetMethodName="GetDataByMaCongTy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMaCongTy" UserSourceName="FillByMaCongTy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaCongTy, TenCongTy, MaKhachHang, TenKhachHang, MaDuAn, TenDuAn, MaHangMuc, TenHangMuc, MaCongViec, NoiDungCongViec, MaNhiemVu, DienGiai, DonViTinh, KeHoachBatDau, KeHoachKetThuc, ThucHienBatDau, ThucHienKetThuc FROM dbo.vwm_TienDoDuAn
+WHERE MaCongTy=@MaCongTy</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaCongTy" ColumnName="MaCongTy" DataSourceName="oemisdatabase.dbo.vwm_TienDoDuAn" DataTypeServer="nvarchar(25)" DbType="String" Direction="Input" ParameterName="@MaCongTy" Precision="0" ProviderType="NVarChar" Scale="0" Size="25" SourceColumn="MaCongTy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="OEMIS_VNConnectionString (Web.config)" DbObjectName="oemisdatabase.dbo.vwm_TienDoDuAn" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByMaDuAn" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMaDuAn" GeneratorSourceName="FillByMaDuAn" GetMethodModifier="Public" GetMethodName="GetDataByMaDuAn" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMaDuAn" UserSourceName="FillByMaDuAn">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaCongTy, TenCongTy, MaKhachHang, TenKhachHang, MaDuAn, TenDuAn, MaHangMuc, TenHangMuc, MaCongViec, NoiDungCongViec, MaNhiemVu, DienGiai, DonViTinh, KeHoachBatDau, KeHoachKetThuc, ThucHienBatDau, ThucHienKetThuc FROM dbo.vwm_TienDoDuAn
+WHERE MaDuAn=@MaDuAn</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaDuAn" ColumnName="MaDuAn" DataSourceName="oemisdatabase.dbo.vwm_TienDoDuAn" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@MaDuAn" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="MaDuAn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="OEMIS_VNConnectionString (Web.config)" DbObjectName="oemisdatabase.dbo.vwm_TienDoDuAn" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByMaKhachHang" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMaKhachHang" GeneratorSourceName="FillByMaKhachHang" GetMethodModifier="Public" GetMethodName="GetDataByMaKhachHang" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMaKhachHang" UserSourceName="FillByMaKhachHang">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaCongTy, TenCongTy, MaKhachHang, TenKhachHang, MaDuAn, TenDuAn, MaHangMuc, TenHangMuc, MaCongViec, NoiDungCongViec, MaNhiemVu, DienGiai, DonViTinh, KeHoachBatDau, KeHoachKetThuc, ThucHienBatDau, ThucHienKetThuc FROM dbo.vwm_TienDoDuAn
+WHERE MaKhachHang=@MaKhachHang</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaKhachHang" ColumnName="MaKhachHang" DataSourceName="oemisdatabase.dbo.vwm_TienDoDuAn" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MaKhachHang" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MaKhachHang" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsWM" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsWM" msprop:Generator_UserDSName="dsWM">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwm_TienDoDuAn" msprop:Generator_TableClassName="vwm_TienDoDuAnDataTable" msprop:Generator_TableVarName="tablevwm_TienDoDuAn" msprop:Generator_TablePropName="vwm_TienDoDuAn" msprop:Generator_RowDeletingName="vwm_TienDoDuAnRowDeleting" msprop:Generator_RowChangingName="vwm_TienDoDuAnRowChanging" msprop:Generator_RowEvHandlerName="vwm_TienDoDuAnRowChangeEventHandler" msprop:Generator_RowDeletedName="vwm_TienDoDuAnRowDeleted" msprop:Generator_UserTableName="vwm_TienDoDuAn" msprop:Generator_RowChangedName="vwm_TienDoDuAnRowChanged" msprop:Generator_RowEvArgName="vwm_TienDoDuAnRowChangeEvent" msprop:Generator_RowClassName="vwm_TienDoDuAnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaCongTy" msprop:Generator_ColumnVarNameInTable="columnMaCongTy" msprop:Generator_ColumnPropNameInRow="MaCongTy" msprop:Generator_ColumnPropNameInTable="MaCongTyColumn" msprop:Generator_UserColumnName="MaCongTy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenCongTy" msprop:Generator_ColumnVarNameInTable="columnTenCongTy" msprop:Generator_ColumnPropNameInRow="TenCongTy" msprop:Generator_ColumnPropNameInTable="TenCongTyColumn" msprop:Generator_UserColumnName="TenCongTy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaKhachHang" msprop:Generator_ColumnVarNameInTable="columnMaKhachHang" msprop:Generator_ColumnPropNameInRow="MaKhachHang" msprop:Generator_ColumnPropNameInTable="MaKhachHangColumn" msprop:Generator_UserColumnName="MaKhachHang" type="xs:int" />
+              <xs:element name="TenKhachHang" msprop:Generator_ColumnVarNameInTable="columnTenKhachHang" msprop:Generator_ColumnPropNameInRow="TenKhachHang" msprop:Generator_ColumnPropNameInTable="TenKhachHangColumn" msprop:Generator_UserColumnName="TenKhachHang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaDuAn" msprop:Generator_ColumnVarNameInTable="columnMaDuAn" msprop:Generator_ColumnPropNameInRow="MaDuAn" msprop:Generator_ColumnPropNameInTable="MaDuAnColumn" msprop:Generator_UserColumnName="MaDuAn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenDuAn" msprop:Generator_ColumnVarNameInTable="columnTenDuAn" msprop:Generator_ColumnPropNameInRow="TenDuAn" msprop:Generator_ColumnPropNameInTable="TenDuAnColumn" msprop:Generator_UserColumnName="TenDuAn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaHangMuc" msprop:Generator_ColumnVarNameInTable="columnMaHangMuc" msprop:Generator_ColumnPropNameInRow="MaHangMuc" msprop:Generator_ColumnPropNameInTable="MaHangMucColumn" msprop:Generator_UserColumnName="MaHangMuc" type="xs:int" />
+              <xs:element name="TenHangMuc" msprop:Generator_ColumnVarNameInTable="columnTenHangMuc" msprop:Generator_ColumnPropNameInRow="TenHangMuc" msprop:Generator_ColumnPropNameInTable="TenHangMucColumn" msprop:Generator_UserColumnName="TenHangMuc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaCongViec" msprop:Generator_ColumnVarNameInTable="columnMaCongViec" msprop:Generator_ColumnPropNameInRow="MaCongViec" msprop:Generator_ColumnPropNameInTable="MaCongViecColumn" msprop:Generator_UserColumnName="MaCongViec" type="xs:int" />
+              <xs:element name="NoiDungCongViec" msprop:Generator_ColumnVarNameInTable="columnNoiDungCongViec" msprop:Generator_ColumnPropNameInRow="NoiDungCongViec" msprop:Generator_ColumnPropNameInTable="NoiDungCongViecColumn" msprop:Generator_UserColumnName="NoiDungCongViec" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaNhiemVu" msprop:Generator_ColumnVarNameInTable="columnMaNhiemVu" msprop:Generator_ColumnPropNameInRow="MaNhiemVu" msprop:Generator_ColumnPropNameInTable="MaNhiemVuColumn" msprop:Generator_UserColumnName="MaNhiemVu" type="xs:int" />
+              <xs:element name="DienGiai" msprop:Generator_ColumnVarNameInTable="columnDienGiai" msprop:Generator_ColumnPropNameInRow="DienGiai" msprop:Generator_ColumnPropNameInTable="DienGiaiColumn" msprop:Generator_UserColumnName="DienGiai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DonViTinh" msprop:Generator_ColumnVarNameInTable="columnDonViTinh" msprop:Generator_ColumnPropNameInRow="DonViTinh" msprop:Generator_ColumnPropNameInTable="DonViTinhColumn" msprop:Generator_UserColumnName="DonViTinh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KeHoachBatDau" msprop:Generator_ColumnVarNameInTable="columnKeHoachBatDau" msprop:Generator_ColumnPropNameInRow="KeHoachBatDau" msprop:Generator_ColumnPropNameInTable="KeHoachBatDauColumn" msprop:Generator_UserColumnName="KeHoachBatDau" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="KeHoachKetThuc" msprop:Generator_ColumnVarNameInTable="columnKeHoachKetThuc" msprop:Generator_ColumnPropNameInRow="KeHoachKetThuc" msprop:Generator_ColumnPropNameInTable="KeHoachKetThucColumn" msprop:Generator_UserColumnName="KeHoachKetThuc" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ThucHienBatDau" msprop:Generator_ColumnVarNameInTable="columnThucHienBatDau" msprop:Generator_ColumnPropNameInRow="ThucHienBatDau" msprop:Generator_ColumnPropNameInTable="ThucHienBatDauColumn" msprop:Generator_UserColumnName="ThucHienBatDau" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ThucHienKetThuc" msprop:Generator_ColumnVarNameInTable="columnThucHienKetThuc" msprop:Generator_ColumnPropNameInRow="ThucHienKetThuc" msprop:Generator_ColumnPropNameInTable="ThucHienKetThucColumn" msprop:Generator_UserColumnName="ThucHienKetThuc" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

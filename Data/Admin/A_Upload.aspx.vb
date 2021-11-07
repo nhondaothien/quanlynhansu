@@ -1,0 +1,13 @@
+﻿Public Class A_Upload
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not Session("LoginOK") Then
+            Response.Redirect("A_Login.aspx")
+        End If
+        panelPhanQuyen.Visible = True
+        panelThongBao.Visible = False
+        panelError.Visible = False
+    End Sub
+
+End Class

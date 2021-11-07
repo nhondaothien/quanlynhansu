@@ -1,0 +1,61 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Logout.master.vb" Inherits="HRM.Logout" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" runat="server" />
+    <title>Quản lý báo giá</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/../../Content/images/icon.png" />
+    <!-- App css -->
+    <link href="/../../Content/Themes/Minton_green/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/../../Content/Themes/Minton_green/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/../../Content/Themes/Minton_green/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Begin content -->
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+
+            </div>
+            <!-- container -->
+
+        </div>
+        <!-- END content -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Vendor js -->
+    <script src="/../../Content/Themes/Minton_green/assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="/../../Content/Themes/Minton_green/assets/js/app.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="script" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

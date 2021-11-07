@@ -1,0 +1,336 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="HR.Master.vb" Inherits="HRM.HR" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Hệ thống quản lý nguồn nhân lực trực tuyến</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/../../Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="/../../Content/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/../../Content/images/icon.png" />
+
+    <link href="/../../Content/Themes/Minton_green/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <script src="/../../Content/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="/../../Content/js/bootstrap.min.js"></script>
+    <script src="/../../ckeditor/ckeditor.js"></script>
+    <script src="/../../ckfinder/ckfinder.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="600" EnablePartialRendering="true" EnableScriptLocalization="true" EnableScriptGlobalization="true"></asp:ScriptManager>
+                <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default.aspx">HRM</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="Default.aspx">Trang Chủ</a></li>
+                        <li><a href="#">Giới Thiệu</a></li>
+                        <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="../../../Login.aspx">Thoát</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row margin-top70">
+                <div class="col-md-9 col-sm-12">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="list-group">
+                        <asp:LinkButton ID="lbtn1" runat="server" CssClass="list-group-item list-group-item-success">1. NHÂN VIÊN</asp:LinkButton>
+                        <asp:Panel ID="Panel1" runat="server" CssClass="list-group-item">
+                            <asp:TreeView ID="TreeView4" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                <Nodes>
+                                    <asp:TreeNode Text="1.1 QUẢN LÝ" Value="#" SelectAction="None">
+                                        <asp:TreeNode Text="1.1.1 Thông Tin Nhân Sự" Value="#" NavigateUrl="~/Data/HRM/Management/hrM08_NhanSuCongTy.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.1.2 Danh Sách Nhân Sự" Value="#" NavigateUrl="~/Data/HRM/Report/hrR05_DanhSachNhanSu.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.1.3 Sơ Yếu Lý Lịch" Value="#" NavigateUrl="~/Data/HRM/Report/hrR17_Profile.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.1.4 Danh Sách Nhân Sự Mới Vào Làm Việc" Value="#" NavigateUrl="~/Data/HRM/Report/hrR14_NgayVaoLamViec.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.1.5 Danh Sách Nhân Sự Nghỉ Việc" Value="#" NavigateUrl="~/Data/HRM/Report/hrR06_DanhSachNhanSuNghiViec.aspx"></asp:TreeNode>
+                                    </asp:TreeNode>
+                                    <asp:TreeNode Text="1.2 CẬP NHẬT" Value="#" SelectAction="None">
+                                        <asp:TreeNode Text="1.2.1 Cập Nhật Nhân Sự" Value="#" NavigateUrl="~/Data/HRM/Update/hrU00_NhanSu.aspx"></asp:TreeNode>
+<%--                                        <asp:TreeNode Text="1.2.2 Cập Nhật Thông Tin Liên Hệ Khẩn Cấp" Value="#" NavigateUrl="~/Data/HRM/Update/hrU00_ThongTinLienHeKhanCap.aspx"></asp:TreeNode>--%>
+                                        <asp:TreeNode Text="1.2.2 Cập Nhật Quốc Tịch" Value="#" NavigateUrl="~/Data/HRM/Update/hrU21_QuocTich.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.2.3 Cập Nhật Dân Tộc" Value="#" NavigateUrl="~/Data/HRM/Update/hrU22_DanToc.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.2.4 Cập Nhật Tôn Giáo" Value="#" NavigateUrl="~/Data/HRM/Update/hrU23_TonGiao.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.2.5 Cập Nhật Trình Độ" Value="#" NavigateUrl="~/Data/HRM/Update/hrU24_TrinhDoHocVan.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.2.6 Cập Nhật Chức Vụ" Value="#" NavigateUrl="~/Data/HRM/Update/hrU20_ChucVu.aspx"></asp:TreeNode>
+                                        <asp:TreeNode Text="1.2.7 Cập Nhật Hệ Số BH Bắt Buộc" Value="#" NavigateUrl="~/Data/HRM/Update/hrU25_HeSoBaoHiemBatBuoc.aspx"></asp:TreeNode>
+
+                                    </asp:TreeNode>
+                                </Nodes>
+                            </asp:TreeView>
+                        </asp:Panel>
+                    </div>
+                    <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel1_CollapsiblePanelExtender" TargetControlID="Panel1" ID="Panel1_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn1" CollapseControlID="lbtn1" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+                    <asp:Panel ID="Panel0" runat="server">
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn2" runat="server" CssClass="list-group-item list-group-item-success">2. BẰNG CẤP</asp:LinkButton>
+                            <asp:Panel ID="Panel2" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView5" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="2.1 QUẢN LÝ BẰNG CẤP" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="2.1.1 Quản Lý Bằng Cấp" Value="#" NavigateUrl="~/Data/HRM/Management/hrM01_BangCap.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="2.1.2 Danh Mục Bằng Cấp" Value="#" NavigateUrl="~/Data/HRM/Report/hrR01_BangCap.aspx"></asp:TreeNode>
+                                            <asp:TreeNode NavigateUrl="~/Data/HR/Report/hrR01a_BangCap.aspx" Text="2.1.3 Ma Trận Bằng Cấp" Value="2.1.3 Ma Trận Bằng Cấp"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="2.2 CẬP NHẬT BẰNG CẤP" Value="2.2 CẬP NHẬT BẰNG CẤP">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU01_BangCap.aspx" Text="2.2.1 Cập Nhật Bằng Cấp" Value="2.2.1 Bằng Cấp"></asp:TreeNode>
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU15_LoaiBangCap.aspx" Text="2.2.2 Cập Nhật Loại Bằng Cấp" Value="2.2.2 Ma Trận Bằng Cấp"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel2_CollapsiblePanelExtender" TargetControlID="Panel2" ID="Panel2_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn2" CollapseControlID="lbtn2" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn3" runat="server" CssClass="list-group-item list-group-item-success">3. CHỨNG CHỈ</asp:LinkButton>
+                            <asp:Panel ID="Panel3" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView6" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="3.1 QUẢN LÝ CHỨNG CHỈ" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="3.1.1 Quản Lý Chứng Chỉ" Value="#" NavigateUrl="~/Data/HRM/Management/hrM03_ChungChi.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="3.1.2 Danh Mục Chứng Chỉ" Value="#" NavigateUrl="~/Data/HRM/Report/hrR03_ChungChi.aspx"></asp:TreeNode>
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Report/hrR03a_ChungChi.aspx" Text="3.1.3 Ma Trận Chứng Chỉ" Value="3.1.3 Ma Trận Chứng Chỉ"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="3.2 CẬP NHẬT CHỨNG CHỈ" Value="3.2 CẬP NHẬT CHỨNG CHỈ">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU02_ChungChi.aspx" Text="3.2.1 Cập Nhật Chứng Chỉ" Value="3.2.1 Chứng Chỉ"></asp:TreeNode>
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU16_LoaiChungChi.aspx" Text="3.2.2 Cập Nhật Loại Chứng Chỉ" Value="3.2.2 Loại Chứng Chỉ"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel3_CollapsiblePanelExtender" TargetControlID="Panel3" ID="Panel3_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn3" CollapseControlID="lbtn3" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn4" runat="server" CssClass="list-group-item list-group-item-success">4. KỸ NĂNG</asp:LinkButton>
+                            <asp:Panel ID="Panel4" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView7" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="4.1 QUẢN LÝ KỸ NĂNG" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="4.1.1 Kỹ Năng" Value="#" NavigateUrl="~/Data/HRM/Report/hrR01_BangCap.aspx"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="4.2 CẬP NHẬT KỸ NĂNG" Value="4.2 CẬP NHẬT KỸ NĂNG">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU03_KyNang.aspx" Text="4.2.1 Kỹ Năng" Value="4.2.1 Kỹ Năng"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel4_CollapsiblePanelExtender" TargetControlID="Panel4" ID="Panel4_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn4" CollapseControlID="lbtn4" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn5" runat="server" CssClass="list-group-item list-group-item-success">5. CÔNG TÁC</asp:LinkButton>
+                            <asp:Panel ID="Panel5" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView8" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="5.1 QUẢN LÝ CÔNG TÁC" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="5.1.1 Công Tác" Value="#" NavigateUrl="~/Data/HRM/Report/hrR04_CongTac.aspx"></asp:TreeNode>
+<%--                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Report/hrR19a_CV.aspx" Text="5.1.2 Sơ Yếu Lý Lịch" Value="5.1.2 Sơ Yếu Lý Lịch"></asp:TreeNode>--%>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="5.2 CẬP NHẬT CÔNG TÁC" Value="5.2 CẬP NHẬT CÔNG TÁC">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU04_CongTac.aspx" Text="5.2.1 Cập Nhật Công Tác" Value="5.2.1 Cập Nhật Công Tác"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel5_CollapsiblePanelExtender" TargetControlID="Panel5" ID="Panel5_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn5" CollapseControlID="lbtn5" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn6" runat="server" CssClass="list-group-item list-group-item-success">6. PHÉP NĂM</asp:LinkButton>
+                            <asp:Panel ID="Panel6" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView9" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="6.1 QUẢN LÝ PHÉP NĂM" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="6.1.1 Quản Lý Phép Năm" Value="#" NavigateUrl="~/Data/HRM/Management/hrM02_PhepNam.aspx"></asp:TreeNode>
+
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Report/hrR16_NghiPhep.aspx" Text="6.1.2 Danh Mục Phép Năm" Value="6.1.2 Danh Mục Phép Năm"></asp:TreeNode>
+
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="6.2  CẬP NHẬT PHÉP NĂM" Value="6.2  CẬP NHẬT PHÉP NĂM">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU06_PhepNam.aspx" Text="6.2.1 Cập Nhật Phép Năm" Value="6.2.1 Cập Nhật Phép Năm"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel6_CollapsiblePanelExtender" TargetControlID="Panel6" ID="Panel6_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn6" CollapseControlID="lbtn6" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn7" runat="server" CssClass="list-group-item list-group-item-success">7. LƯƠNG</asp:LinkButton>
+                            <asp:Panel ID="Panel7" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView10" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="7.1 QUẢN LÝ TIỀN LƯƠNG" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="7.1.1 Quản Lý Phiếu Lương" Value="#" NavigateUrl="~/Data/HRM/Management/hrM04_PhieuTraLuongHangThang.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="7.1.2 Danh Mục Tiền Lương" Value="#" NavigateUrl="~/Data/HRM/Report/hrR23_TongHopTienLuong.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="7.1.3 Chấm Công" Value="#" NavigateUrl="~/Data/HRM/Report/hrR22_TongHopChamCong.aspx"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="7.2 CẬP NHẬT TIỀN LƯƠNG" Value="7.2 CẬP NHẬT TIỀN LƯƠNG">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU07_TienLuong.aspx" Text="7.2.1 Cập Nhật Tiền Lương" Value="7.2.1 Cập Nhật Tiền Lương"></asp:TreeNode>
+<%--                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU08_DieuChinhLuong.aspx" Text="7.2.2 Cập Nhật Điều Chỉnh Lương" Value="7.2.2 Cập Nhật Điều Chỉnh Lương"></asp:TreeNode>--%>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel7_CollapsiblePanelExtender" TargetControlID="Panel7" ID="Panel7_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn7" CollapseControlID="lbtn7" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn8" runat="server" CssClass="list-group-item list-group-item-success">8. HỢP ĐỒNG LAO ĐỘNG</asp:LinkButton>
+                            <asp:Panel ID="Panel8" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView11" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="8.1 QUẢN LÝ HỢP ĐỒNG" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="8.1.1 Quản Lý Hợp Đồng" Value="#" NavigateUrl="~/Data/HRM/Management/hrM09_HopDongLaoDong.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="8.1.2 Danh Mục Hợp Đồng" Value="#" NavigateUrl="~/Data/HRM/Report/hrR09_HopDongLaoDong.aspx"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="8.2 CẬP NHẬT HỢP ĐỒNG" Value="8.2 CẬP NHẬT HỢP ĐỒNG">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU09_HopDongLaoDong.aspx" Text="8.2.1 Cập Nhật Hợp Đồng" Value="8.2.1 Cập Nhật Hợp Đồng"></asp:TreeNode>
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU17_LoaiHopDong.aspx" Text="8.2.2 Cập Nhật Loại Hợp Đồng" Value="8.2.2 Cập Nhật Loại Hợp Đồng"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel8_CollapsiblePanelExtender" TargetControlID="Panel8" ID="Panel8_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn8" CollapseControlID="lbtn8" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <%--<div class="list-group">
+                            <asp:LinkButton ID="lbtn9" runat="server" CssClass="list-group-item list-group-item-success">9. ĐÀO TẠO</asp:LinkButton>
+                            <asp:Panel ID="Panel9" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView12" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="9.1 QUẢN LÝ ĐÀO TẠO" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="9.1.1 Quản Lý Đào Tạo" Value="#" NavigateUrl="~/Data/HRM/Management/hrM07_DaoTao.aspx"></asp:TreeNode>
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Report/hrR07_DaoTao.aspx" Text="9.1.2 Danh Sách Đào Tạo" Value="9.1.2 Danh Sách Đào Tạo"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="9.2 CẬP NHẬT ĐÀO TẠO" Value="9.2 CẬP NHẬT ĐÀO TẠO">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU10a_YeuCauDaoTao.aspx" Text="9.1.1 Yêu Cầu Đào Tạo" Value="9.1.1 Yêu Cầu Đào Tạo"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel9_CollapsiblePanelExtender" TargetControlID="Panel9" ID="Panel9_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn9" CollapseControlID="lbtn9" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>--%>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn10" runat="server" CssClass="list-group-item list-group-item-success">10. KHEN THƯỞNG</asp:LinkButton>
+                            <asp:Panel ID="Panel10" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView13" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="10.1 QUẢN LÝ KHEN THƯỞNG" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="10.1.1 Danh Sách Khen Thưởng" Value="#" NavigateUrl="~/Data/HRM/Report/hrR11_KhenThuong.aspx"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="10.2 CẬP NHẬT KHEN THƯỞNG" Value="10.2 CẬP NHẬT KHEN THƯỞNG">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU12_KhenThuong.aspx" Text="10.2.1 Cập Nhật Khen Thưởng" Value="10.2.1 Cập Nhật Khen Thưởng"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel10_CollapsiblePanelExtender" TargetControlID="Panel10" ID="Panel10_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn10" CollapseControlID="lbtn10" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn11" runat="server" CssClass="list-group-item list-group-item-success">11. KỶ LUẬT</asp:LinkButton>
+                            <asp:Panel ID="Panel11" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView14" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="11.1 QUẢN LÝ KỶ LUẬT" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="11.1.1 Danh Sách Kỷ Luật" Value="#" NavigateUrl="~/Data/HRM/Report/hrR12_KyLuat.aspx"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="11.2 CẬP NHẬT KỶ LUẠT" Value="11.2 CẬP NHẬT KỶ LUẠT">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU13_KyLuat.aspx" Text="11.2.1 Cập Nhật Kỷ Luật" Value="11.2.1 Cập Nhật Kỷ Luật"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel11_CollapsiblePanelExtender" TargetControlID="Panel11" ID="Panel11_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn11" CollapseControlID="lbtn11" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn12" runat="server" CssClass="list-group-item list-group-item-success">12. THĂNG TIẾN</asp:LinkButton>
+                            <asp:Panel ID="Panel12" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView15" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="12.1 QUẢN LÝ THĂNG TIẾN" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="12.1.1 Danh Sách Thăng Tiến" Value="#" NavigateUrl="~/Data/HRM/Update/hrU20_ChucVu"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="12.2 CẬP NHẬT THĂNG TIẾN" Value="12.2 CẬP NHẬT THĂNG TIẾN">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU11_ThangTien.aspx" Text="12.2.1 Cập Nhật Thăng Tiến" Value="12.2.1 Cập Nhật Thăng Tiến"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel12_CollapsiblePanelExtender" TargetControlID="Panel12" ID="Panel12_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn12" CollapseControlID="lbtn12" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+
+                        <div class="list-group">
+                            <asp:LinkButton ID="lbtn13" runat="server" CssClass="list-group-item list-group-item-success">13. SỨC KHỎE</asp:LinkButton>
+                            <asp:Panel ID="Panel13" runat="server" CssClass="list-group-item">
+                                <asp:TreeView ID="TreeView16" runat="server" Width="100%" NodeWrap="True" CssClass="table table-responsive">
+                                    <Nodes>
+                                        <asp:TreeNode Text="13.1 QUẢN LÝ SỨC KHỎE" Value="#" SelectAction="None">
+                                            <asp:TreeNode Text="13.1 Danh Sách Khám Sức Khỏe" Value="#" NavigateUrl="~/Data/HRM/Report/hrR10_KhamSucKhoe.aspx"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="13.2 CẬP NHẬT SỨC KHỎE" Value="13.2 CẬP NHẬT SỨC KHỎE">
+                                            <asp:TreeNode NavigateUrl="~/Data/HRM/Update/hrU14_TinhTrangSucKhoe.aspx" Text="13.2.1 Cập Nhật Sức Khỏe" Value="13.2.1 Cập Nhật Sức Khỏe"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                    </Nodes>
+                                </asp:TreeView>
+                            </asp:Panel>
+                        </div>
+                        <ajaxToolkit:CollapsiblePanelExtender runat="server" BehaviorID="Panel13_CollapsiblePanelExtender" TargetControlID="Panel13" ID="Panel13_CollapsiblePanelExtender" Collapsed="True" SuppressPostBack="False" ExpandControlID="lbtn13" CollapseControlID="lbtn13" CollapsedSize="0" ExpandedSize="-1"></ajaxToolkit:CollapsiblePanelExtender>
+                    </asp:Panel>
+                </div>
+            </div>
+        </div>
+        <script>
+    $(document).on("click", "a", function () {
+        if (this.innerHTML.indexOf("Delete") == 0) {
+            return confirm("Are you sure to delete this record?");
+        }
+    });
+        </script>
+    </form>
+</body>
+</html>

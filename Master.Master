@@ -1,0 +1,72 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Master.Master.vb" Inherits="HRM.Master" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Hệ thống thông tin quản lý doanh nghiệp trực tuyến</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/Content/images/icon.png" />
+    <link href="/Content/Themes/Minton_green/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="/Content/Scripts/jquery-2.2.4.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <style>
+        marquee {
+            font-size: 30px;
+            font-weight: 800;
+            color: #00ffff;
+            font-family: sans-serif;
+        }
+    </style>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">HRM</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="Default.aspx">Trang Chủ</a></li>
+                        <li><a href="#">Giới Thiệu</a></li>
+                        <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="container">
+            <hr />
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            Design <i class="fa fa-heart" aria-hidden="true"></i>by <a href="https://linhfishcr7.wordpress.com/" target="_blank">LINHFISH</a>
+        </div>
+    </form>
+
+</body>
+</html>

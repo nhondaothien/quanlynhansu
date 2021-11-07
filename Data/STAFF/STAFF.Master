@@ -1,0 +1,142 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="STAFF.master.vb" Inherits="HRM.STAFF" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Quản Lý Nhân Viên Trực Tuyến</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/../../Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="/../../Content/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/../../Content/images/icon.png" />
+
+    <link href="/../../Content/Themes/Minton_green/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <script src="/../../Content/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="/../../Content/js/bootstrap.min.js"></script>
+    <script src="/../../ckeditor/ckeditor.js"></script>
+    <script src="/../../ckfinder/ckfinder.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default.aspx">HRM-STAFF</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="Default.aspx">Trang Chủ</a></li>
+                        <li><a href="#">Giới Thiệu</a></li>
+                        <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="staffLogin.aspx">Thoát</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="row margin-top70">
+                <div class="col-md-9 col-sm-12">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="col-md-3 col-sm-12">
+
+                    <asp:Panel ID="panel_management" runat="server">
+                        <div class="panel-group" id="panel-192350">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <a class="panel-title" data-toggle="collapse" data-parent="#panel-192350" href="#panel-element-NGANH">QUẢN LÝ</a>
+                                </div>
+                                <div id="panel-element-NGANH" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="staffM_NhanSu.aspx"><i class="fe-minus-square"></i> Thông Tin Cá Nhân</a>
+                                    </div> 
+                                    <div class="panel-body">
+                                        <a href="staffM_CongViec.aspx"><i class="fe-minus-square"></i> Công Việc</a>
+                                    </div>
+                                    <div class="panel-body">
+                                        <a href="staffR_BaoCaoCongViec.aspx"><i class="fe-minus-square"></i> Báo Cáo Công Việc</a>
+                                    </div>
+                                    <div class="panel-body">
+                                        <a href="staffM_HopDong.aspx"><i class="fe-minus-square"></i> Hợp Đồng Lao Động</a>
+                                    </div> 
+                                    <div class="panel-body">
+                                        <a href="staffM_CV.aspx"><i class="fe-minus-square"></i> Sơ Yếu Lý Lịch</a>
+                                    </div> 
+                                    <div class="panel-body">
+                                        <a href="staffM_PhepNam.aspx"><i class="fe-minus-square"></i> Phép Năm</a>
+                                    </div> 
+                                    <div class="panel-body">
+                                        <a href="staffR_DanhMucChamCong.aspx"><i class="fe-minus-square"></i> Chấm Công</a>
+                                    </div>
+                                    <div class="panel-body">
+                                        <a href="staffM_PhieuTraLuongHangThang.aspx"><i class="fe-minus-square"></i> Tiền Lương</a>
+                                    </div>                                     
+                                </div>
+                            </div>
+
+                        </div>
+                    </asp:Panel>
+
+                    <asp:Panel ID="panel_update" runat="server">
+                        <div class="panel-group" id="panel-192351">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">
+                                    <a class="panel-title" data-toggle="collapse" data-parent="#panel-192351" href="#panel-element-UNGANH">CẬP NHẬT</a>
+                                </div>
+                                <div id="panel-element-UNGANH" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="staffU_ChamCong.aspx"><i class="fe-refresh-ccw"></i> Chấm Công</a>
+                                    </div>
+                                    <div class="panel-body">
+                                        <a href="#"><i class="fe-refresh-ccw"></i> Phép Năm</a>
+                                    </div>                                      
+                                    <div class="panel-body">
+                                        <a href="#"><i class="fe-refresh-ccw"></i> Công Việc</a>
+                                    </div>
+                                    <div class="panel-body">
+                                        <a href="staffU_DoiMatKhau.aspx"><i class="fe-refresh-ccw"></i> Đổi Mật Khẩu</a>
+                                    </div>                                         
+                                </div>
+                            </div>
+                        </div>
+                    </asp:Panel>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).on("click", "a", function () {
+                if (this.innerHTML.indexOf("Delete") == 0) {
+                    return confirm("Are you sure to delete this record?");
+                }
+            });
+        </script>
+    </form>
+        <!-- Vendor js -->
+
+</body>
+</html>
